@@ -20,10 +20,11 @@ const DisasterContextProvider = (props)=>{
       const [audioBlob, setAudioBlob] = useState(null);
       const [lang, setLang] = useState("en-IN"); // defaulting to Hindi
       const [isEmergency, setIsEmergency] = useState(false);
-      const isValidPassword = /^(?=.[a-z])(?=.[A-Z])(?=.[!@#$%^&(),.?":{}|<>]).+$/.test(password);
+      
 
     
       const registerUser = () => {
+        const isValidPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&(),.?":{}|<>]).+$/.test(password);
         if (email.length === 0 || password.length === 0 || confirmPassword.length === 0) {
           alert("All fields are required!");
         } else if (password !== confirmPassword) {
